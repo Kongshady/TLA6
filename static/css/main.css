@@ -1,0 +1,83 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+.card{
+    width: 500px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+}
+.container label {  
+    display: block;  
+    margin: 2px 0;  
+}  
+.input-field {  
+    width: 100%;  
+    padding: 10px;
+    margin: 0 0 8px 0;  
+    border: 1px solid #ccc;  
+    border-radius: 4px;  
+    box-sizing: border-box;  
+}  
+.input-field {  
+    border-color: green;  
+    outline: none;  
+    color: green;
+    font-weight: bold;
+}
+.classifier_section{
+    padding: 10px 0 ;
+    display: flex;
+    flex-direction: row;
+    gap: 10px; 
+}
+.classifier_section label{
+    user-select: none;
+}
+button{
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    background-color: green;
+    color: white;
+    font-size: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: .2s ease-in;
+}
+button:hover{
+    background-color: hsl(120, 100%, 21%);
+}
+.radio_container{
+    color: white;
+    font-size: 15px;
+    display: flex;
+    gap: 5px;
+    flex-grow: 1;
+    padding: 10px;
+    background-color: green;
+    border-radius: 5px;
+}
+.response{
+    background-color: green;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+}
+.response p{
+    margin: 3px 0;
+}
+input[type=radio]{
+    accent-color: green;
+}

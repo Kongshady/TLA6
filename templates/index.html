@@ -1,0 +1,69 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">  
+    <title>Flask Activity</title>  
+</head>  
+<body>  
+    <div class="container">  
+        <div class="card">  
+            <form method="POST" action="/classify">  
+                <label for="clump-thickness">Clump Thickness:</label>  
+                <input type="text" name="clump-thickness" class="input-field" required maxlength="2">  
+
+                <label for="uniformity-cell-size">Uniformity Cell Size:</label>  
+                <input type="text" name="uniformity-cell-size" class="input-field" required maxlength="2">  
+
+                <label for="uniformity-cell-shape">Uniformity Cell Shape:</label>  
+                <input type="text" name="uniformity-cell-shape" class="input-field" required maxlength="2">  
+
+                <label for="marginal-adhesion">Marginal Adhesion:</label>  
+                <input type="text" name="marginal-adhesion" class="input-field" required maxlength="2">  
+
+                <label for="single-epithelial-cell-size">Single Epithelial Cell Size:</label>  
+                <input type="text" name="single-epithelial-cell-size" class="input-field" required maxlength="2">  
+
+                <label for="bland-chromatin">Bland Chromatin:</label>  
+                <input type="text" name="bland-chromatin" class="input-field" required maxlength="2">  
+
+                <label for="normal-nucleoli">Normal Nucleoli:</label>  
+                <input type="text" name="normal-nucleoli" class="input-field" required maxlength="2">  
+
+                <label for="mitoses">Mitoses:</label>  
+                <input type="text" name="mitoses" class="input-field" required maxlength="2">  
+
+                <h3>Classifier:</h3>
+                <div class="classifier_section">  
+                    <div class="radio_container">
+                        <input type="radio" name="classifier" id="knn" value="knn" checked>  
+                        <label for="knn">K-Nearest Neighbor</label>  
+                    </div>
+                    <div class="radio_container">
+                        <input type="radio" name="classifier" id="nb" value="gnb">  
+                        <label for="nb">Naive Bayes</label>  
+                    </div>
+                    <div class="radio_container">
+                        <input type="radio" name="classifier" id="dt" value="dtree">  
+                        <label for="dt">Decision Tree</label>  
+                    </div>
+                </div>
+                
+                <button type="submit">  
+                    Classify  
+                </button>  
+            </form>  
+
+            {% if prediction is not none %}  
+            <h3>Response:</h3>  
+                <div class="response">  
+                    <p><strong>Inputs:</strong> {{ inputs }}</p>  
+                    <p><strong>Classifier:</strong> {{ classifier }}</p>  
+                    <p><strong>Prediction:</strong> {{ prediction }}</p>  
+                </div>  
+            {% endif %}  
+        </div>  
+    </div>  
+</body>  
+</html>
